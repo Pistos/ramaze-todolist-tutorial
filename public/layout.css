@@ -25,3 +25,9 @@ table#todolist td {
 .description.done {
     text-decoration: line-through;
 }
+
+.error {
+    padding: 1em;
+    background-color: #FF6666;
+    margin: 1em 0px;
+}
