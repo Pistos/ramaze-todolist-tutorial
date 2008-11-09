@@ -1,7 +1,14 @@
 class MainController < Ramaze::Controller
   
+  layout '/layout', [ :create, :new ]
+  
   def index
+    @title = 'Todo List'
     @tasks = Task.all
+  end
+  
+  def new
+    @title = 'New Task'
   end
   
   def create
