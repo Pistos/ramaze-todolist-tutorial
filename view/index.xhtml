@@ -7,7 +7,12 @@
     <a href="/new">Add Task</a>
     <ul>
       <?r @tasks.each do |task| ?>
-        <li>(#{task.status}) #{task.description}</li>
+        <li>
+        <?r if not task.done ?>
+          [#{ A( '&nbsp;&nbsp;', :href => Rs( :close, task.id_ ) ) }]
+        <?r end ?>
+        (#{task.status}) #{task.description}
+        </li>
       <?r end ?>
     </ul>
   </body>
