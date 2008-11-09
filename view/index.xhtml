@@ -12,6 +12,7 @@
           [#{ A( '&nbsp;&nbsp;', :href => Rs( :check_off, task.id_ ) ) }]
         <?r end ?>
         (#{task.status}) #{task.description}
+        (#{ A( 'delete', :href => Rs( :delete, task.id_ ) ) })
         </li>
       <?r end ?>
     </ul>

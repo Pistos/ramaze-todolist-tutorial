@@ -13,4 +13,9 @@ class MainController < Ramaze::Controller
     Task[ id ].check_off
     redirect Rs( :/ )
   end
+  
+  def delete( id )
+    Task[ id ].delete
+    redirect Rs( :/ )
+  end
 end
