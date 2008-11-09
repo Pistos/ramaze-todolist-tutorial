@@ -5,10 +5,8 @@
   <body>
     <h1>Todo List</h1>
     <ul>
-      <?r @tasks.each do |task|
-        status = task.done ? 'done' : 'not done'
-        ?>
-        <li>(#{status}) #{task.description}</li>
+      <?r @tasks.each do |task| ?>
+        <li>(#{task.status}) #{task.description}</li>
       <?r end ?>
     </ul>
   </body>
