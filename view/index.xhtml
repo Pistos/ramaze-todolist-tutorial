@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <ul>
+      <?r @tasks.each do |task|
+        status = task.done ? 'done' : 'not done'
+        ?>
+        <li>(#{status}) #{task.description}</li>
+      <?r end ?>
+    </ul>
+  </body>
+</html>
