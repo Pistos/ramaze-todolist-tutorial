@@ -25,4 +25,5 @@ class MainController < Ramaze::Controller
     Task[ id ].delete
     redirect Rs( :/ )
   end
+  
 end
