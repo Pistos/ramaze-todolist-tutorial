@@ -3,7 +3,7 @@ class Task < DBI::Model( :tasks )
     done ? 'done' : 'not done'
   end
   
-  def close
+  def check_off
     self.done = true
   end
 end
