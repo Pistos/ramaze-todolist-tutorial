@@ -1,13 +1,16 @@
     <a href="/new">Add Task</a>
-    <ul>
+    <table>
       <?r @tasks.each do |task| ?>
-        <li>
-        <?r if not task.done ?>
-          [#{ A( '&nbsp;&nbsp;', :href => Rs( :check_off, task.id_ ) ) }]
-        <?r end ?>
-        (#{task.status}) #{task.description}
-        (#{ A( 'delete', :href => Rs( :delete, task.id_ ) ) })
-        </li>
+        <tr>
+          <td>
+            <?r if not task.done ?>
+              [#{ A( '&nbsp;&nbsp;', :href => Rs( :check_off, task.id_ ) ) }]
+            <?r end ?>
+          </td>
+          <td>(#{task.status})</td>
+          <td>#{task.description}</td>
+          <td>#{ A( 'delete', :href => Rs( :delete, task.id_ ) ) }</td>
+        </tr>
       <?r end ?>
-    </ul>
+    </table>
     
