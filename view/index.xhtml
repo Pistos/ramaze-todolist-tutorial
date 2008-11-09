@@ -1,14 +1,15 @@
     <a href="/new">Add Task</a>
-    <table>
+    <table id="todolist">
       <?r @tasks.each do |task| ?>
         <tr>
-          <td>
+          <td class="checkbox">
             <?r if not task.done ?>
-              [#{ A( '&nbsp;&nbsp;', :href => Rs( :check_off, task.id_ ) ) }]
+              [#{ A( '&nbsp; &nbsp;', :href => Rs( :check_off, task.id_ ) ) }]
+            <?r else ?>
+              [X]
             <?r end ?>
           </td>
-          <td>(#{task.status})</td>
-          <td>#{task.description}</td>
+          <td class="description #{task.done ? 'done' : ''}">#{task.description}</td>
           <td>#{ A( 'delete', :href => Rs( :delete, task.id_ ) ) }</td>
         </tr>
       <?r end ?>

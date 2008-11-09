@@ -1,0 +1,27 @@
+body {
+    margin: 2em;
+}
+
+table#todolist {
+    border: 3px double #000099;
+    border-collapse: collapse;
+    margin: 1em 0px;
+}
+
+table#todolist td {
+    padding: 0.5em;
+    border: 1px solid #9999FF;
+}
+
+.checkbox a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.checkbox a:hover {
+    background-color: #DDEEFF;
+}
+
+.description.done {
+    text-decoration: line-through;
+}
