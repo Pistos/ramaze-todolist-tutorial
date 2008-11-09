@@ -9,7 +9,7 @@
       <?r @tasks.each do |task| ?>
         <li>
         <?r if not task.done ?>
-          [#{ A( '&nbsp;&nbsp;', :href => Rs( :close, task.id_ ) ) }]
+          [#{ A( '&nbsp;&nbsp;', :href => Rs( :check_off, task.id_ ) ) }]
         <?r end ?>
         (#{task.status}) #{task.description}
         </li>

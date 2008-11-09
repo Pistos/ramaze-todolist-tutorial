@@ -9,8 +9,8 @@ class MainController < Ramaze::Controller
     redirect Rs( :/ )
   end
   
-  def close( id )
-    Task[ id ].close
+  def check_off( id )
+    Task[ id ].check_off
     redirect Rs( :/ )
   end
 end
