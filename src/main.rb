@@ -21,7 +21,7 @@ class MainController < Ramaze::Controller
       redirect '/new'
     end
     
-    Task.create( :description => h( request[ 'description' ] ) )
+    Task.create( :description => h( description ) )
     redirect Rs( :/ )
   end
   
