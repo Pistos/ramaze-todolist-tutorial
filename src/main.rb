@@ -5,7 +5,7 @@ class MainController < Ramaze::Controller
   end
   
   def create
-    Task.create( :description => request[ 'description' ] )
+    Task.create( :description => h( request[ 'description' ] ) )
     redirect Rs( :/ )
   end
   
