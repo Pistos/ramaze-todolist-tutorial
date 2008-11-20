@@ -12,16 +12,18 @@ class MainController < Ramaze::Controller
   end
   
   def create
-    description = request[ 'description' ]
-    return if description.nil?
+    description = h( request[ 'description' ] ).strip
     
-    title.strip!
-    if title.empty?
-      fail 'Please enter a description for the new task.'
-      redirect '/new'
+    begin
+      Task.create( :description => description )
+    rescue DBI::ProgrammingError => e
+      if e.message =~ /minimum_description_length/
+        fail 'Please enter an adequate description for the new task.'
+        redirect '/new'
+      else
+        raise e
+      end
     end
-    
-    Task.create( :description => h( description ) )
     redirect Rs( :/ )
   end
   
