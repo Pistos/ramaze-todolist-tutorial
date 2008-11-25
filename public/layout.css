@@ -26,7 +26,7 @@ table#todolist td {
     text-decoration: line-through;
 }
 
-.error {
+#flash_error {
     padding: 1em;
     background-color: #FF6666;
     margin: 1em 0px;
