@@ -19,7 +19,7 @@ class MainController < Ramaze::Controller
     rescue DBI::ProgrammingError => e
       if e.message =~ /minimum_description_length/
         fail 'Please enter an adequate description for the new task.'
-        redirect '/new'
+        redirect Rs( :new )
       else
         raise e
       end
