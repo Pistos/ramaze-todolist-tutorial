@@ -1,6 +1,6 @@
 class MainController < Ramaze::Controller
   
-  layout '/layout', [ :create, :new ]
+  layout '/layout' => [ :index, :new ]
   
   def index
     @title = 'Todo List'
