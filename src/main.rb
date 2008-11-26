@@ -39,6 +39,11 @@ class MainController < Ramaze::Controller
     redirect Rs( :/ )
   end
   
+  def error
+    @title = 'Application Error'
+    @e = Ramaze::Dispatcher::Error.current
+  end
+  
   # -------------------------------------------------
   
   def fail( message )

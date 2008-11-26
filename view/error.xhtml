@@ -1,0 +1,7 @@
+<h2>#{@e.message}</h2>
+
+<ul>
+  <?r @e.backtrace.each do |frame| ?>
+    <li>#{frame}</li>
+  <?r end ?>
+</ul>
